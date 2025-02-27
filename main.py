@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 class Game:#classe do jogo
     def __init__(self, nome, categoria, console):
@@ -29,7 +29,7 @@ def create():
     console = request.form.get('console')
     jogo = Game(name, category, console) #cria um jogo novo
     lista.append(jogo) #adiciona na lista de jogos
-    return render_template('lista.html', titulo_site='Site de Jogos', titulo='Jogos', games = lista)
+    return redirect('/') #redireciona para a pagina inicial
     
 if __name__ == '__main__':
     app.run(debug=True)

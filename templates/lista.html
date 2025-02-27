@@ -1,32 +1,23 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{ titulo_site }}</title>
-    </head>
-    <body>
-        
+{% extends "template.html" %}
+{% block conteudo %}
         <div>
-            <table>
-                <thead>
+            <table class="table-container">
+                <thead class="table-header">
                     <tr>
                         <th>Nome</th>
                         <th>Categoria</th>
                         <th>Console</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-body">
                     {% for game in games %}
                     <tr>
-                        <td>{{ game.nome }}</td>
-                        <td>{{ game.categoria }}</td>
-                        <td>{{ game.console }}</td>
+                        <td class="table-cell">{{ game.nome }}</td>
+                        <td class="table-cell">{{ game.categoria }}</td>
+                        <td class="table-cell">{{ game.console }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
         </div>
-
-    </body>
-</html>
+{% endblock %}
